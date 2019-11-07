@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  gather_facts: False
+
+  vars:
+      region: us-east-1 # Region Name
+      instance_type: t2.micro # Instance Type
+      ami: ami-01af538473fc34608 # Any AMI ID of you choice
+      keypair: keyname # Any key name in the region
+  
+
+  tasks:
+
+    - name: create ec2 instance
+      ec2:
+        key_name: '{{ keypair }}'
+        instance_type: "{{ instance_type}}"
+        image: "{{ ami }}"
+        wait: true
+        region: "{{ region }}"
+        count: 1  # default
+        count_tag:
+            Name: Demo_ansible
+        instance_tags:
+            Name: Demo_ansible
+        assign_public_ip: yes
+      register: ec2

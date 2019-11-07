@@ -1,0 +1,17 @@
+---
+- hosts: uat
+  remote_user: ubuntu
+  become: yes
+  tasks:
+    - name: Install nginx if not present
+      apt: name=nginx state=present update_cache=yes
+
+    - name: Insert Index Page
+      template:
+       src: index.html
+       dest: /usr/share/nginx/html/index.html
+
+    - name: Start NGiNX
+      service:
+       name: nginx
+       state: started
