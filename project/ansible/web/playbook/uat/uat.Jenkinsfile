@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch: '${GIT_BRANCH}', url: 'https://github.com/abhinavnarra/ansible.git'
+                git branch: '${GIT_BRANCH}', url: 'https://github.com/maddyreddie/automate-project.git'
             }
         }
         stage('Deploy INmail webserver with ansible playbook') {
