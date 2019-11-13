@@ -9,6 +9,15 @@ This application environment is provisioned using Vagrant and used Ubuntu OS for
         cd #path to vagrantfile
         vagrant up --provider=virtualbox
     ```
+# Setup Vagrant from Mac OS X
+```
+        brew cask install virtualbox 
+        brew cask install vagrant #Now install Vagrant either from the website or use homebrew for installing it.
+        brew cask install vagrant-manager #Vagrant-Manager helps you manage all your virtual machines in one place directly from the menubar.
+        cd #path to vagrantfile
+        vagrant up --provider=virtualbox
+    ```
+
     NOTE: for vagrant installation  (https://linuxize.com/post/how-to-install-vagrant-on-ubuntu-18-04/)(ubuntu/images/hvm-ssd/ubuntu-xenial-18.04-amd64-server)
   
 
